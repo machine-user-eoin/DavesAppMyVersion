@@ -1,0 +1,125 @@
+ div.container {
+            width: 100%;
+            border: 1px solid gray;
+        }
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #333;
+}
+
+#content-div {
+    background-color: #333;
+    border:1px;
+    height:100%;
+    width:100%;
+}
+.wrapper {
+    width: 100%;
+    border: black;
+    display: grid;;
+    grid-auto-rows: minmax(250px, 300px);
+}
+.one {
+    border:1px black;
+    grid-column: 1/4;
+    grid-row: 1;
+}
+.two {
+    border:1px black;
+    grid-column: 5/8;
+    grid-row: 1 ;
+}
+.three {
+    border:1px black;
+    grid-column: 9/12;
+    grid-row: 1;
+}
+.four {
+    border:1px black;
+    grid-column: 1/4;
+    grid-row: 2;
+}
+.five {
+    border:1px black;
+    grid-column: 5/8;
+    grid-row: 2 ;
+}
+.six {
+    border:1px black;
+    grid-column: 9/12;
+    grid-row: 2 ;
+}
+
+article {
+    text-align: center;
+    margin-left: 0;
+    border-left: 1px solid gray;
+    padding: 50px;
+    overflow: hidden;
+}
+
+
+table, td, th {
+    border: 1px solid black;
+    background-color: black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    color:grey;
+}
+
+th {
+    height: 10px;
+    text-align: left;
+    color:grey;
+}
+
+th a{
+    text-align: right;
+    float: right;
+}
+
+td a {
+    text-align: right;
+    float: right;
+}
+.btn-buynow{
+    width: 40%;display: block;margin: 0 auto;
+}

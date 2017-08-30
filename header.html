@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+   <link href="css/app.css" rel="stylesheet" type="text/css"/>
+    <title>Product Catalog</title>
+</head>
+
+<body>
+<div class=container>
+
+    <header>
+        <img src="public/images/artimage.png" alt="logo"/>
+        <h1>Art Gallery</h1>
+    </header>
+
+<div>
+    <div id="menu">
+    <nav>
+        <ul>
+            <li><a href="header.html">Product Catalog</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li style="float:right"><a class="active" href="about.html">About</a></li>
+        </ul>
+    </nav>
+    </div>
+</div>
+    <div>
+        <div><h2>Art Catalogue</h2></div>
+        <div>
+    <div class="wrapper">
+         <form type="submit">
+            <ul id="productList"></ul>  
+            <h2>Checkout - Review Order</h2>
+
+            <div id="results">
+            </div>
+
+           <div class="row">
+                <input type="button" class="btn btn-danger btn-buynow"/>
+            </div>
+
+            <input type="hidden" id="hdnData" />
+
+             <div style = "background-color:#b5dcb3; clear:both">
+            <table>
+                <tr>
+                    <th>Address</th>
+                    <th> </th>
+                    <th><a>Contact</a></th>
+                </tr>
+                <tr>
+                    <td>Black Books Inc.,</td>
+                    <td> </td>
+                    <td><a href ="Phone: 077568469"> Phone: 077568469</a></td>
+                </tr>
+                <tr>
+                    <td>London, SU4 T76,</td>
+                    <td> </td>
+                    <td><a href ="mailto: bernardblack@BB.com"> Contact: Bernard Black </a></td>
+                </tr>
+                <tr>
+                    <td>England.</td>
+                    <td> </td>
+                </tr>
+            </table>
+       </form>
+            
+        </div>
+    </div>
+</div>
+</div>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="/app.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            
+            $(".dimensions" ).change(function() {
+                var idOfSelectList = $(this)[0].id[$(this)[0].id.length -1];
+
+                switch($(this)[0].selectedIndex) {
+                    case 1: $("#priceValue" + idOfSelectList).text("10.00")
+                    break;
+                    case 2: $("#priceValue" + idOfSelectList).text("15.00")
+                    break;
+                    default: $("#priceValue" + idOfSelectList).text("5.00")
+                }
+            });
+
+            $(".quantity" ).change(function() {
+                var quantity = $(this).val();
+                var idOfSelectList = $(this)[0].id[$(this)[0].id.length -1];
+
+                var priceStr = $("#price" + idOfSelectList).text();    
+                var price = Number(priceStr) * Number(quantity);
+
+                console.log(idOfSelectList);
+                console.log(price.toString());
+
+                $("#price" + idOfSelectList).text(price.toString());
+            });
+
+            var selectedProductsArray = []
+
+             $(document).on("click", ".btn-primary", function(){
+                var id = event.target.id;
+                var title = $("#title" + id).text();    
+                var artist = $("#artist" + id).text();    
+                var priceStr = $("#price" + id).text();    
+                var quantity = Number($("#quantity" + id).find(":selected").text());
+                var price = Number(priceStr);
+                var totalPrice = quantity * price;
+                price = totalPrice;
+
+                var html = '<div id="reviewContainer" class="col-xs-8 well"> \
+                    <div class="row"> \
+                        <h2 style="float:left;" class="span6" id="title' + id + '">Title: ' + title + '</h2> \
+                    </div> \
+                    <div class="row"> \
+                        <span class="span6" id="artist' + id + '">Artist: ' + artist.trim() + '</span> \
+                    </div> \
+                    <div class="row"> \
+                        <span class="span6" id="price' + id + '">Price: <span class="price">' + totalPrice + '</span> </span> \
+                    </div> \
+                    <div class="row"> \
+                        <span class="span6" id="quantity' + id + '">Quantity: ' + quantity + '</span> \
+                    </div> \
+                </div> '
+                
+                selectedProduct = { title, artist, quantity, totalPrice } ;
+                selectedProductsArray.push(selectedProduct);
+
+                $("#hdnData").val(JSON.stringify(selectedProductsArray));
+                $(html).appendTo('#results');
+                $("#quantity" + id).prop('selectedIndex',0);
+            });
+        });
+    </script>
+</body>
+
+</html>

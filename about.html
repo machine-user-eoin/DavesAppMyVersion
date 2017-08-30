@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <style>
+
+        div.container {
+            width: 100%;
+            border: 1px solid gray;
+        }
+        header, footer {
+            padding: 1em;
+            color: white;
+            background-color: black;
+            clear: left;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #333;
+        }
+        div a{
+
+        }
+        article {
+            text-align: left;
+            margin-left: 0;
+            border-left: 1px solid gray;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+
+        table, td, th {
+            border: 1px solid black;
+            background-color: black;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color:grey;
+        }
+
+        th {
+            height: 10px;
+            text-align: left;
+            color:grey;
+        }
+
+        th a{
+            text-align: right;
+            float: right;
+        }
+
+        td a {
+            text-align: right;
+            float: right;
+        }
+
+    </style>
+
+    <title>Product Catalog</title>
+</head>
+
+<body>
+<div class=container>
+
+    <header>
+        <img src="public/images/artimage.png" alt="logo"/>
+        <h1>Art Gallery</h1>
+    </header>
+
+    <div>
+        <div id="menu">
+            <nav>
+                <ul>
+                    <li><a href="header.html">Product Catalog</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                    <li style="float:right"><a class="active" href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div>
+
+        <article>
+            <h1>About</h1>
+
+            <hr class="soften">
+            <div class="row">
+                <div class="span8">
+
+                    <p>
+                        Meet Bernard Black. Bernard is an anti-social, heavy drinking chain-smoker who owns a small London artshop - an unusual vocation, given that he detests customers and delights in physically and verbally abusing them at every opportunity. His best (and only) friend in the world is his lunch time drinking partner Fran, a neurotic and boyfriend-desperate woman who owns the pretentious arts and crafts shop next to his.<br>
+                        <br>
+                        Bernard is cynical, abrasive and lazy, and is perfectly happy that way - but his life takes an unexpected turn when he sells 'Picture of Calm' to hyper-stressed accountant Manny Bianco, who against all odds ends up swallowing it.
+                        <br><br>
+                        When the dust is settled, Manny will have a new job, Fran will have a new friend, and Bernard's life will be far more surreal (if that's possible).<br>
+                    </p>
+                </div>
+
+            </div><br/>
+
+        </article>
+
+    </div>
+
+    <div style = "background-color:#b5dcb3; clear:both">
+        <table>
+            <tr>
+                <th>Address</th>
+                <th> </th>
+                <th><a>Contact</a></th>
+            </tr>
+            <tr>
+                <td>Black Books Inc.,</td>
+                <td> </td>
+                <td><a href ="Phone: 077568469"> Phone: 077568469</a></td>
+            </tr>
+            <tr>
+                <td>London, SU4 T76,</td>
+                <td> </td>
+                <td><a href ="mailto: bernardblack@BB.com"> Contact: Bernard Black </a></td>
+            </tr>
+            <tr>
+                <td>England.</td>
+                <td> </td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</body>
+
+</html>
